@@ -81,8 +81,17 @@ function checkGameover(){
             }
             
         }
-
-
+        
+        let boardFilled = true;
+        gameGrid.forEach((box) => {
+         if (box === "") boardFilled = false;
+        });
+        // Board is filled, but game is tie
+        if (boardFilled) {
+            playerInfo.innerText = "Game Tied !";
+            gameEndbtn.classList.add("active");
+            return;
+    }
         
     });
     // console.log('inside gameover, executed it ')
